@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Logout } from "@mui/icons-material";
+import { Logout, ArrowForward } from "@mui/icons-material";
 import Swal from "sweetalert2";
 import "../styles/PartnerDashboard.css";
 import Logo from "../assets/Logo.png";
@@ -47,28 +47,37 @@ const PartnerDashboard = ({ onLogout }) => {
   const folderSections = [
     {
       id: "materials",
-      title: "📂 Materials for Coachees",
+      title: "Materials for Coachees",
+      icon: "📂",
+      description: "Access comprehensive materials and resources designed specifically for your coachees. Empower them with tools, worksheets, and guides to support their personal growth journey.",
       route: "/materials",
     },
     {
       id: "brand",
-      title: "📂 Brand & Messaging Playbook",
+      title: "Brand & Messaging Playbook",
+      icon: "📂",
+      description: "Discover our brand identity, messaging guidelines, and communication strategies. Ensure consistency across all touchpoints with our comprehensive brand playbook.",
       route: "/brand-messaging",
     },
     {
       id: "marketing",
-      title: "📂 Marketing Assets",
+      title: "Marketing Assets",
+      icon: "📂",
+      description: "Explore a curated collection of marketing materials, templates, and visual assets. Everything you need to promote your coaching services effectively.",
       route: "/marketing-assets",
     },
     {
       id: "media",
-      title: "📂 Living Fulfilled Media Kit",
+      title: "Living Fulfilled Media Kit",
+      icon: "📂",
+      description: "Download our official media kit with logos, brand assets, press materials, and high-resolution images. Perfect for publications and promotional materials.",
       route: "/media-kit",
     },
   ];
 
-  // Get user email from localStorage
+  // Get user email and organization from localStorage
   const userEmail = localStorage.getItem("userEmail") || "partner@livingfulfilled.com";
+  const organization = localStorage.getItem("organization") || "Living Fulfilled";
 
   return (
     <div className="partner-dashboard">
@@ -118,7 +127,12 @@ const PartnerDashboard = ({ onLogout }) => {
                 onClick={() => navigate(section.route)}
               >
                 <h3 className="folder-title">{section.title}</h3>
-                <button className="explore-button">Explore Now</button>
+                <div className="folder-icon">{section.icon}</div>
+                <p className="folder-description">{section.description}</p>
+                <button className="explore-button">
+                  Explore Now
+                  <ArrowForward className="button-arrow" />
+                </button>
               </motion.div>
             ))}
           </div>
@@ -130,6 +144,8 @@ const PartnerDashboard = ({ onLogout }) => {
         <div className="footer-left">
           <span className="footer-user-label">Logged in as:</span>
           <span className="footer-user-email">{userEmail}</span>
+          <span className="footer-separator">•</span>
+          <span className="footer-organization">{organization}</span>
         </div>
         <div className="footer-right">
           <span className="footer-copyright">© 2025 Living Fulfilled</span>
