@@ -17,9 +17,9 @@ const Login = ({ onLogin }) => {
   // Valid users credentials
   const VALID_USERS = [
     { email: "freedom@livinfulfilled.com", password: "Sat@12345" },
-    { email: "user1@gmail.com", password: "user1@12345" },
-    { email: "user2@gmail.com", password: "user2@12345" },
-    { email: "user3@gmail.com", password: "user3@12345" },
+    { email: "user1@gmail.com", password: "User1@12345" },
+    { email: "user2@gmail.com", password: "User2@12345" },
+    { email: "user3@gmail.com", password: "User3@12345" },
   ];
 
   const validateEmail = (email) => {
