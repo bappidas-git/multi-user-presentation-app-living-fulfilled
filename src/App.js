@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
+import PartnerDashboard from "./components/PartnerDashboard";
 import StandalonePage from "./components/StandalonePage";
 import LiveSessions from "./components/LiveSessions";
 import Outcomes from "./components/Outcomes";
@@ -62,7 +63,7 @@ function App() {
         {/* Dashboard Route */}
         <Route
           path="/dashboard"
-          element={<Dashboard onLogout={handleLogout} />}
+          element={<PartnerDashboard onLogout={handleLogout} />}
         />
 
         {/* Live Sessions Route */}
@@ -90,7 +91,7 @@ function App() {
           path="/life-model"
           element={
             <>
-              <Dashboard onLogout={handleLogout} />
+              <PartnerDashboard onLogout={handleLogout} />
               <ImageZoomModal
                 isOpen={true}
                 onClose={() => window.history.back()}
