@@ -14,9 +14,13 @@ const Login = ({ onLogin }) => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
-  // Hardcoded credentials
-  const VALID_EMAIL = "freedom@livinfulfilled.com";
-  const VALID_PASSWORD = "Sat@12345";
+  // Valid users credentials
+  const VALID_USERS = [
+    { email: "freedom@livinfulfilled.com", password: "Sat@12345" },
+    { email: "user1@gmail.com", password: "user1@12345" },
+    { email: "user2@gmail.com", password: "user2@12345" },
+    { email: "user3@gmail.com", password: "user3@12345" },
+  ];
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -87,10 +91,13 @@ const Login = ({ onLogin }) => {
 
     // Simulate API call delay
     setTimeout(() => {
-      if (
-        formData.email === VALID_EMAIL &&
-        formData.password === VALID_PASSWORD
-      ) {
+      // Check if credentials match any valid user
+      const validUser = VALID_USERS.find(
+        (user) =>
+          user.email === formData.email && user.password === formData.password
+      );
+
+      if (validUser) {
         Swal.fire({
           icon: "success",
           title: "Login Successful!",
