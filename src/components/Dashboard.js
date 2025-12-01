@@ -111,9 +111,7 @@ const Dashboard = ({ onLogout }) => {
           <img src={Logo} alt="Living Fulfilled" className="header-logo" />
         </div>
 
-        <h1 className="header-title">
-          Life Planning & Self Development Coaching Platform
-        </h1>
+        <h1 className="header-title">The Fulfillment Hub</h1>
 
         <button className="logout-button-header" onClick={handleLogoutClick}>
           <Logout fontSize="small" />

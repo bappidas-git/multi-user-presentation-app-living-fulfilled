@@ -159,7 +159,7 @@ const Login = ({ onLogin }) => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            Coach Login
+            The Fulfillment Hub
           </motion.h1>
 
           <motion.p
@@ -214,6 +214,7 @@ const Login = ({ onLogin }) => {
                   className={`form-input ${errors.password ? "error" : ""}`}
                   placeholder="Enter your password"
                   autoComplete="current-password"
+                  style={{ width: "100%" }}
                 />
                 <button
                   type="button"
