@@ -101,7 +101,7 @@ const Login = ({ onLogin }) => {
         Swal.fire({
           icon: "success",
           title: "Login Successful!",
-          text: "Welcome back, Coach!",
+          text: "Welcome back!",
           toast: true,
           position: "top-end",
           showConfirmButton: false,
