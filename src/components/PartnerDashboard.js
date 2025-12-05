@@ -98,23 +98,6 @@ const PartnerDashboard = ({ onLogout }) => {
       {/* Main Content */}
       <main className="partner-main">
         <div className="partner-content">
-          {/* Partnership Essentials Card */}
-          <motion.div
-            className="partnership-essentials-card"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            <h2 className="essentials-title">Partnership Essentials</h2>
-            <p className="essentials-description">
-              Welcome to the Living Fulfilled Partner Portal. Access comprehensive resources,
-              tools, and materials designed to empower you in delivering transformative
-              coaching experiences. Start your journey here with our essential partnership
-              guide and gain insights into our proven methodologies.
-            </p>
-            <button className="essentials-button">Start Here</button>
-          </motion.div>
-
           {/* Folder Cards Grid */}
           <div className="folder-cards-grid">
             {folderSections.map((section, index) => (
